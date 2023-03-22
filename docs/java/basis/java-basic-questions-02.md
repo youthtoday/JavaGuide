@@ -355,6 +355,8 @@ public native int hashCode();
 
 其实， `hashCode()` 和 `equals()`都是用于比较两个对象是否相等。
 
+注意，jdk1.8当中，实际上无论HashSet中是否已经存在了某元素，HashSet都会直接插入，只是会在add()方法的返回值处告诉我们插入前是否存在相同元素。
+
 **那为什么 JDK 还要同时提供这两个方法呢？**
 
 这是因为在一些容器（比如 `HashMap`、`HashSet`）中，有了 `hashCode()` 之后，判断元素是否在对应容器中的效率会更高（参考添加元素进`HashSet`的过程）！
